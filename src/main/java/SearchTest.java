@@ -19,7 +19,7 @@ public class SearchTests {
     void successfulSearchTestNew() {
         Configuration.pageLoadStrategy = "eager";
         open("https://bing.com/");
-222222222222222222
-        33333333333333
+        $("[name=q]").setValue("yandex").pressEnter();
+        $("html").shouldHave(text("https://ya.ru"));
     }
 }
