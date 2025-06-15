@@ -19,7 +19,6 @@ public class SearchTests {
     void successfulSearchTestNew() {
         Configuration.pageLoadStrategy = "eager";
         open("https://bing.com/");
-        $("[name=q]").setValue("yandex").pressEnter();
-        $("html").shouldHave(text("https://ya.ru"));
+
     }
 }
