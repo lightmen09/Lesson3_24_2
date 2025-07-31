@@ -17,7 +17,12 @@ public class AutomationPracticeForm {
 
     @Test
     void fillFormTest() {
+        //открытие
         open("/automation-practice-form");
+        //реклама
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
+
         $("#firstName").setValue("Tom");
         $("#lastName").setValue("Jerry");
         $("#userEmail").setValue("TomJerry@disney.com");
@@ -36,9 +41,10 @@ public class AutomationPracticeForm {
         $("#react-select-3-option-2").click();
         $("#city").click();
         $("#react-select-4-option-1").click();
+        //отправка формы
         $("#submit").click();
 
-
+        //Проверка
         $(".table-responsive").shouldHave(text("Tom Jerry"));
         $(".table-responsive").shouldHave(text("TomJerry@disney.com"));
         $(".table-responsive").shouldHave(text("Male"));
