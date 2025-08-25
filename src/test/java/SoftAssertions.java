@@ -16,19 +16,16 @@ public class SoftAssertions {
 
     @Test
     void softAssertionsPageShouldContainJUnit5Example() {
-        //  Открыть страницу Selenide в Github
+
         open("/selenide/selenide");
 
-        //переходим в раздел Wiki
+
         $("#wiki-tab").click();
 
-        //находим страницу SoftAssertions
         $("#wiki-pages-filter").setValue("SoftAssertions");
 
-        //открываем страницу SoftAssertions
         $(byText("SoftAssertions")).click();
 
-        //проверяем пример кода для JUnit5
         $("#wiki-body").shouldHave(text(
                 "@ExtendWith({SoftAssertsExtension.class})\n" +
                         "class Tests {\n" +
